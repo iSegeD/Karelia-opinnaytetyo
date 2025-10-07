@@ -1,9 +1,11 @@
 import bcrypt from "bcrypt";
 import sharp from "sharp";
 import { v4 as uuidv4 } from "uuid";
+
 import User from "../models/userModel.js";
 
 import { avatarsBucket } from "../config/googleStorage.js";
+
 import { httpError } from "../utils/httpErrorHelper.js";
 
 const MAX_AVATAR_SIZE = 500 * 1024;

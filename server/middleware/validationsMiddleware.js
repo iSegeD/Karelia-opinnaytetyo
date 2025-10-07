@@ -62,3 +62,82 @@ export const patchUserValidation = [
     .isLength({ min: 6 }),
 ];
 // ================= END: USER VALIDATIONS ================= //
+
+// ================= START: POST VALIDATIONS ================= //
+export const postValidation = [
+  body("title", "Please enter a title (min. 3 characters)")
+    .isString()
+    .trim()
+    .isLength({ min: 3 }),
+  body("desc", "Please enter a description (min. 3 characters)")
+    .isString()
+    .trim()
+    .isLength({ min: 3 }),
+
+  body("tags")
+    .optional()
+    .isString()
+    .trim()
+    .custom((value) => {
+      const tagArray = value
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+
+      if (tagArray.length > 20) {
+        httpError("Maximun 20 tags allowed", 422);
+      }
+
+      for (const tag of tagArray) {
+        if (tag.length < 2 || tag.length > 20) {
+          httpError("Tag must be 2-20 characters long", 422);
+        }
+      }
+
+      return true;
+    }),
+];
+
+export const pathPostValidation = [
+  body("title", "Please enter a title (min. 3 characters)")
+    .optional()
+    .isString()
+    .trim()
+    .isLength({ min: 3 }),
+  body("desc", "Please enter a description (min. 3 characters)")
+    .optional()
+    .isString()
+    .trim()
+    .isLength({ min: 3 }),
+
+  body("tags")
+    .optional()
+    .isString()
+    .trim()
+    .custom((value) => {
+      const tagArray = value
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+
+      if (tagArray.length > 20) {
+        httpError("Maximun 20 tags allowed", 422);
+      }
+
+      for (const tag of tagArray) {
+        if (tag.length < 2 || tag.length > 20) {
+          httpError("Tag must be 2-20 characters long", 422);
+        }
+      }
+
+      return true;
+    }),
+];
+
+export const commentValidation = [
+  body("comment", "Please write a comment with at least 2 characters")
+    .isString()
+    .trim()
+    .isLength({ min: 2 }),
+];
+// ================= END: POST VALIDATIONS ================= //

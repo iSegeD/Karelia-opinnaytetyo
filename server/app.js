@@ -9,6 +9,7 @@ import { tokenExtractor } from "./middleware/authMiddleware.js";
 
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(tokenExtractor);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 app.use(unknownEndpoint);
 app.use(errorHandler);
