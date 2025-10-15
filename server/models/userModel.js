@@ -16,12 +16,12 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.set("toJSON", {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString();
-    delete returnedObject._id;
-    delete returnedObject.__v;
-    delete returnedObject.password;
-    delete returnedObject.refreshToken;
+  transform: (doc, ret) => {
+    ret.id = ret._id.toString();
+    delete ret._id;
+    delete ret.__v;
+    delete ret.password;
+    delete ret.refreshToken;
   },
 });
 
