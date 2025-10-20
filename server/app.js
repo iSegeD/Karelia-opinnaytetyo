@@ -24,7 +24,11 @@ mongoose
 
 app.use(cookieParser());
 app.use(express.json());
+
+// This middleware is only used during development to handle form-urlencoded data (Postman requests)
+// It will not be included in the final "production" version
 app.use(express.urlencoded({ extended: true }));
+
 app.use(tokenExtractor);
 
 app.use("/api/auth", authRoutes);
