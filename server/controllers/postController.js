@@ -32,7 +32,8 @@ const getPost = async (req, res) => {
     { new: true }
   )
     .populate("user", { username: 1, avatar: 1 })
-    .populate("comments.user", { username: 1, avatar: 1 });
+    .populate("comments.user", { username: 1, avatar: 1 })
+    .lean();
 
   if (!selectedPost) {
     httpError("Post not found", 404);

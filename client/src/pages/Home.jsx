@@ -1,5 +1,8 @@
+// Hooks & Components
+import Posts from "../components/Posts";
+
 const Home = () => {
-  return <div>HOME</div>;
+  return <Posts />;
 };
 
 export default Home;
