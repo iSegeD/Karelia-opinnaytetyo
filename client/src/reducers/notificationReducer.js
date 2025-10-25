@@ -22,7 +22,7 @@ export const setNotification = (message) => {
     dispatch(setInfo(message));
 
     if (timeoutId) {
-      clearInterval(timeoutId);
+      clearTimeout(timeoutId);
     }
 
     timeoutId = setTimeout(() => {

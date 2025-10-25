@@ -117,7 +117,7 @@ const editUser = async (req, res) => {
 
   if (currentPassword || newPassword || confirmPassword) {
     if (!currentPassword || !newPassword || !confirmPassword) {
-      httpError("To change password, fill in all password fileds", 422);
+      httpError("To change password, fill in all password fields", 422);
     }
 
     const isPasswordCorrect = await bcrypt.compare(

@@ -110,7 +110,7 @@ export const patchUser = (userData) => {
       ) {
         dispatch(setNotification(`Error: ${error.response.data.message}`));
       }
-      return { success: false };
+      return { success: false, message: error.response.data.message };
     }
   };
 };
