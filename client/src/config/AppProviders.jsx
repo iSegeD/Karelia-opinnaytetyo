@@ -10,7 +10,7 @@ import Register from "../pages/Register";
 import SignIn from "../pages/SignIn";
 import FullPost from "../pages/FullPost";
 import TagsPosts from "../pages/TagsPosts";
-import AuthorsPosts from "../pages/AuthorsPosts";
+import AuthorPosts from "../pages/AuthorPosts";
 import CreatePost from "../pages/CreatePost";
 import EditPost from "../pages/EditPost";
 import Authors from "../pages/Authors";
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "login", element: <SignIn /> },
       { path: "posts/:id", element: <FullPost /> },
       { path: "posts/tags/:tag", element: <TagsPosts /> },
-      { path: "posts/users/:id", element: <AuthorsPosts /> },
+      { path: "posts/users/:id", element: <AuthorPosts /> },
       { path: "create", element: <CreatePost /> },
       { path: "posts/:id/edit", element: <EditPost /> },
       { path: "authors", element: <Authors /> },
