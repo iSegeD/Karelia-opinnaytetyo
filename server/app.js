@@ -4,6 +4,11 @@ import mongoose from "mongoose";
 import { MONGODB_URI } from "./config/serverConfig.js";
 import { infoMessage, errorMessage } from "./utils/logger.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import { unknownEndpoint, errorHandler } from "./middleware/errorMiddleware.js";
 import { tokenExtractor } from "./middleware/authMiddleware.js";
 
@@ -27,13 +32,18 @@ app.use(express.json());
 
 // This middleware is only used during development to handle form-urlencoded data (Postman requests)
 // It will not be included in the final "production" version
-app.use(express.urlencoded({ extended: true }));
+//app.use(express.urlencoded({ extended: true }));
 
 app.use(tokenExtractor);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
+
+app.use(express.static(path.resolve(__dirname, "dist")));
+app.get("/*path", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+});
 
 app.use(unknownEndpoint);
 app.use(errorHandler);
