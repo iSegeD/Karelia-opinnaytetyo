@@ -25,7 +25,7 @@ const Header = () => {
           to="/"
           onClick={() => setIsMenuOpen(false)}
         >
-          MERN BlogApp
+          MERN Blog
         </Link>
 
         {/* Desktop menu */}

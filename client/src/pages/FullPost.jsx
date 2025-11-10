@@ -53,7 +53,7 @@ const FullPost = () => {
       <section className="container mx-auto my-10 xl:my-24">
         {/* Post Content */}
         {post ? (
-          <div className="mx-auto max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl p-10 rounded shadow-lg bg-white ">
+          <div className="mx-auto w-[90%] sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl p-10 rounded shadow-lg bg-white ">
             {/* Left part: avatar, time and name */}
             <div className="flex items-center justify-between gap-5">
               <Link
@@ -102,7 +102,7 @@ const FullPost = () => {
             />
 
             {/* Post description */}
-            <p dangerouslySetInnerHTML={{ __html: post.desc }}></p>
+            <p className="break-words" dangerouslySetInnerHTML={{ __html: post.desc }}></p>
           </div>
         ) : (
           <div className="flex items-center justify-center h-[50vh]">

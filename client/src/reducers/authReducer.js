@@ -9,15 +9,13 @@ import {
 
 import { toast } from "react-toastify";
 
-const initialState = {
-  user: null,
-  token: null,
-  loading: true,
-};
-
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState : {
+    user: null,
+    token: null,
+    loading: null
+  },
   reducers: {
     setUser(state, action) {
       const { token, ...user } = action.payload;

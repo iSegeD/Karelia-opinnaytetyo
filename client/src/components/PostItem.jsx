@@ -75,7 +75,7 @@ const PostItem = ({
       </div>
 
       <p
-        className="line-clamp-3 mb-5"
+        className="line-clamp-3 mb-5 wrap-break-word"
         dangerouslySetInnerHTML={{ __html: desc }}
       ></p>
 

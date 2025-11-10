@@ -51,7 +51,7 @@ const Comments = ({ post }) => {
   };
 
   return (
-    <section className="container max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto my-10 xl:my-24 p-4 rounded bg-white">
+    <section className="container w-[90%] sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto my-10 xl:my-24 p-4 rounded bg-white">
       {/* First part: send comment */}
       <h3 className="mt-2 text-xl font-semibold">Comments</h3>
       {currentUser.token && (
@@ -103,7 +103,7 @@ const Comments = ({ post }) => {
               <img
                 src={item.user.avatar ? item.user.avatar : noAvatar}
                 alt={item.user.username}
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover flex-shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shrink-0"
               />
 
               <div className="flex flex-col min-w-0 pr-5">
