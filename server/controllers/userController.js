@@ -12,7 +12,7 @@ const MAX_AVATAR_SIZE = 500 * 1024;
 const EXT = "jpeg";
 
 // ================= GET USERS =================
-// GET: api/users/authors
+// GET: api/users
 // UNPROTECTED
 const getUsers = async (req, res) => {
   const users = await User.find({});

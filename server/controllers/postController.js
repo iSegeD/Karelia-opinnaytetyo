@@ -120,7 +120,7 @@ const createPost = async (req, res) => {
 
   await User.findByIdAndUpdate(
     req.userId,
-    { $push: { post: newPost._id } },
+    { $push: { posts: newPost._id } },
     { new: true }
   );
 
