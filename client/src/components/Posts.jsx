@@ -1,5 +1,5 @@
 // React
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";

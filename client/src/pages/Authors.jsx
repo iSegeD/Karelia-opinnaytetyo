@@ -12,7 +12,7 @@ import noAvatar from "../assets/images/noAvatar.png";
 const Authors = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.user.all);
-  const isLoading = useSelector((state) => state.user.loading.all);
+  const isLoading = useSelector((state) => state.user.loading);
 
   useEffect(() => {
     dispatch(initializeUsers());
