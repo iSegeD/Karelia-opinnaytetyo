@@ -78,3 +78,15 @@ The frontend is built with **React**, **Vite**, and **Tailwind CSS**. It provide
 * Form validation and error messages
 * Success and error notifications
 
+
+
+## 📌 Project Status
+
+This project was developed and deployed as part of my Bachelor’s thesis. It is currently not actively maintained or hosted online.
+
+Running the application requires configuring the necessary environment variables, MongoDB connection, authentication secrets, and cloud storage credentials.
+
+The source code remains available as a demonstration of the application’s architecture, features, and technologies.
+
+
+
